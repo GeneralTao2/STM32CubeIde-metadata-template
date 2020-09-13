@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="casesensitive" value="true"/>
+		<item key="wholeword" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="rez"/>
+		<list key="findhistory">
+			<item value="Timer2"/>
+			<item value="hak_sd"/>
+			<item value=" FLASH_P"/>
+			<item value="flashAddress"/>
+			<item value="dword"/>
+			<item value="Sector"/>
+			<item value="FLASH_Type_Program"/>
+			<item value="status"/>
+		</list>
+		<list key="replacehistory">
+			<item value=" Flash_P"/>
+			<item value="Page"/>
+			<item value="echoRadar."/>
+			<item value="echoRadar"/>
+		</list>
+	</section>
+</section>

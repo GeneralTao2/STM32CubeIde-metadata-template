@@ -1,0 +1,10 @@
+23:02:19 **** Build of configuration Debug for project STM32L452_I2C_SLAVE ****
+make -j4 all 
+arm-none-eabi-size   STM32L452_I2C_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22744	    120	   2376	  25240	   6298	STM32L452_I2C_SLAVE.elf
+Finished building: default.size.stdout
+ 
+
+23:02:22 Build Finished. 0 errors, 0 warnings. (took 2s.634ms)
+

@@ -1,0 +1,10 @@
+13:16:37 **** Incremental Build of configuration Debug for project STM32L452_ir_hcsr_ntc ****
+make -j4 all 
+arm-none-eabi-size   STM32L452_ir_hcsr_ntc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39996	    484	   3636	  44116	   ac54	STM32L452_ir_hcsr_ntc.elf
+Finished building: default.size.stdout
+ 
+
+13:16:39 Build Finished. 0 errors, 0 warnings. (took 2s.592ms)
+

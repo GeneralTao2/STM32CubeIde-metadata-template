@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;STM32L452RE_RADAR/Core/Libs/dma_uasrt&apos; to &apos;dma_usart&apos;" description="Rename resource &apos;dma_uasrt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Libs/dma_uasrt" name="dma_usart" stamp="1596700597363" updateReferences="true"/>
+</session>

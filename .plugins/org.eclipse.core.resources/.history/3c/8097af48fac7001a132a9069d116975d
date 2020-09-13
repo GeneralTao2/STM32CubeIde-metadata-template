@@ -1,0 +1,53 @@
+/*
+ * encho_radar.c
+ *
+ *  Created on: Jul 16, 2020
+ *      Author: ar725
+ */
+
+#include "echo_radar.h"
+
+void EchoRadar_Init(void) {
+	echoRadar_stepAngle = 10;
+	echoRadar_counter = 0;
+	echoRadar_HCSR_State = 1;
+}
+
+void EchoRadar_Precessing(void) {
+	if(echoRadar_HCSR_State) {
+		HCSR04_ReadDistance(&hcsr);
+	}
+}
+
+void EchoRadar_CaptureCallbackHandler(TIM_HandleTypeDef *htim) {
+	if(htim == hcsr.htim) {
+		EchoRadar_EnableMotor();
+	}
+}
+
+void EchoRadar_EnableMotor(void) {
+	HAL_TIM_Base_Start(&htim6);
+	HAL_TIM_Base_Start_IT(&htim6);
+	if(motor.position + echoRadar_stepAngle > ECHO_MOTOR_MAX_POS) {
+		motor.direction = 0;
+	} else if(motor.position - echoRadar_stepAngle < ECHO_MOTOR_MIN_POS) {
+		motor.direction = 1;
+	}
+	echoRadar_HCSR_State = 0;
+}
+
+void EchoRadar_DisableMotor(void) {
+	HAL_TIM_Base_Stop(&htim6);
+	HAL_TIM_Base_Stop_IT(&htim6);
+	echoRadar_HCSR_State = 1;
+}
+
+void EchoRadar_MotorTimerHandler(void) {
+	if(echoRadar_counter > echoRadar_stepAngle) {
+		EchoRadar_DisableMotor();
+		echoRadar_counter = 0;
+	} else {
+		StepMotorRotate(&motor);
+		echoRadar_counter++;
+	}
+}

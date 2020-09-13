@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;STM32L452_ir_hcsr_ntc&apos; to &apos;STM32L452_ir_hcsr_ntc&apos;" description="Rename resource &apos;STM32L452_ir_hcsr_ntc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/STM32L452_ir_hcsr_ntc" name="STM32L452_ir_hcsr_ntc" stamp="1596724593705" updateReferences="true"/>
+</session>

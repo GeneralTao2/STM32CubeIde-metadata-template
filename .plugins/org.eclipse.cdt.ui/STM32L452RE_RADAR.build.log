@@ -1,0 +1,10 @@
+23:02:15 **** Build of configuration Debug for project STM32L452RE_RADAR ****
+make -j4 all 
+arm-none-eabi-size   STM32L452RE_RADAR.elf 
+   text	   data	    bss	    dec	    hex	filename
+  38500	    144	   8008	  46652	   b63c	STM32L452RE_RADAR.elf
+Finished building: default.size.stdout
+ 
+
+23:02:19 Build Finished. 0 errors, 0 warnings. (took 3s.790ms)
+

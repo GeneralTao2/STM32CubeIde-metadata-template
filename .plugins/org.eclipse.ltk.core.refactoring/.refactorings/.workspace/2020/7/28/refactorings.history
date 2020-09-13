@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;STM32L452_ir_hcsr_ntc/Core/Libs/hcsr04_IC&apos;" deleteContents="false" description="Delete resource &apos;STM32L452_ir_hcsr_ntc/Core/Libs/hcsr04_IC&apos;" element1="/STM32L452_ir_hcsr_ntc/Core/Libs/hcsr04_IC" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1594280739718"/>
+</session>

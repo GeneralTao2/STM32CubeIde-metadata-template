@@ -1,0 +1,52 @@
+/*
+ * encho_radar.h
+ *
+ *  Created on: Jul 16, 2020
+ *      Author: ar725
+ */
+
+#ifndef LIBS_ECHO_RADAR_ECHO_RADAR_H_
+#define LIBS_ECHO_RADAR_ECHO_RADAR_H_
+
+#include "../Libs/encoder/encoder.h"
+#include "../Libs/dma_uasrt/dma_usart.h"
+#include "../Libs/step_motor/step_motor.h"
+#include "../Libs/hcsr04_IC/hcsr04.h"
+
+#define ECHO_MOTOR_VIEWING_ANGLE 525
+
+extern HCSR04_HandleTypeDef hcsr;
+extern StepMotor_HandleTypeDef motor;
+extern TIM_HandleTypeDef htim6;
+extern Encoder_HandleTypeDef encoder;
+
+static struct EchoRadar {
+	int16_t stepAngle;
+	uint16_t counter;
+	uint8_t  HCSR_State;
+	uint16_t standardMap[ECHO_MOTOR_VIEWING_ANGLE * 2];
+	uint8_t standardMapReadingFlag;
+	uint8_t globalErrorStrength;
+	uint16_t map[ECHO_MOTOR_VIEWING_ANGLE * 2];
+	uint16_t mapLength;
+	uint16_t mapIndex;
+} echoRadar;
+
+void EchoRadar_Init(void);
+
+void EchoRadar_Precessing(void);
+
+void EchoRadar_CaptureCallbackHandler(TIM_HandleTypeDef *htim);
+
+void EchoRadar_EnableMotor(void);
+
+void EchoRadar_DisableMotor(void);
+
+void EchoRadar_MotorTimerHandler(void);
+
+uint16_t EchoRadar_GetMapLength();
+
+uint16_t EchoRadar_GetMapValue(uint16_t i);
+
+
+#endif /* LIBS_ECHO_RADAR_ECHO_RADAR_H_ */
